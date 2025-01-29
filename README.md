@@ -1,7 +1,7 @@
 # PRÁCTICA 5.2.
 
-> Para diseñar un sistema que gestione los pedidos de mi empresa, es necesario considerar los siguientes requerimientos:
->
+ Para diseñar un sistema que gestione los pedidos de mi empresa, es necesario considerar los siguientes requerimientos:
+
 >- Los pedidos los realizan los clientes, y pueden contener uno o varios productos.
 > 
 >- Debe registrar la información de cada pedido, incluyendo la fecha en que se realizó.
@@ -20,7 +20,10 @@
 > 
 >- Cada pedido puede estar en uno de los siguientes estados: pdte, pgdo, pcdo, envdo, entgdo. El estado de cada pedido debe ser actualizado en el sistema en función de su evolución.
 
+<hr>
 
 a) Una breve lista de los conceptos que te has encontrado en los diagramas UML que se asemejan a los conceptos de programación orientada a objetos. Por ejemplo: Clases: GestorPedidos
+
 b) Explicación de la herramienta que has utilizado parra generar el diagrama UML, y si la has contrastado con otra y conclusiones de porque has elegido esa.
+
 c) Una explicación sobre la conversión del diagrama UML al código.
