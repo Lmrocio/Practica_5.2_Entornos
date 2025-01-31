@@ -45,40 +45,42 @@
   - Pago, es una clase que representa los pagos que pueden realizarse para un mismo pedido, es decir, son los métodos necesarios, así como los datos de interes sobre dichos plazos y formas de pago.
   - Fecha, es una clase que recoge el día, mes y año de una fecha en concreto, teniendo, a su vez, un método o comportamiento de la clase que verifique que dicha fecha sea válida.
 
-  
 - Atributos: representan, dentro de cada clase, la información que queremos almacenar de cada parte de la gestión de una compra. Son variables que, en algunos casos, pueden modificar su valor mediente actualizaciones. Algunos ejemplos de los atributos son:
    - Email, dentro de la clase Cliente tenemos dicho atributo para almacenar el correo del usuario para poder tramitar su pedido e informarle de las actualizaciones.
    - Stock, dentro de la clase Producto para almacenar la cantidad existente de ese producto determinado y, mediante los métodos, comprobar si el pedido puede ser realizado.
-
-    
+  
 - Métodos: se tratan del comportamiento o funciones necesarias, dentro de cada clase, para que la realización de un pedido pueda ser llevada a cabo. Algunos ejemplos:
 
-
- 
 - Herencia: podríamos hablar de herencia en la clase de FormaPago si no fuera un enum, sino una clase abstracta, ya que contaría con las subclases de Card, Cash y Cheque, las cuales heredarían de la clase FormaPago una interfaz común, aunque permitiendo que tengan sus propias implementación específica.
 
-  
 - Enumeración: lo encontramos tanto en FormaPago como en EstadoPedido, los cuales tiene predefinido unos valores concretos que son los únicos que puede tomar la clase.
 
-  
 - Relaciones entre clases: las relaciones entre las clases pueden ser de asociación, agregación o composición, y nos hablan de cómo se relaciona la información y se conectan los métodos en el sistemas que estamos definiendo.
   - Cliente y Pedido, un cliente puede realizar muchos pedidos, pero un pedido sólo puede estar asociado a un cliente. Con esto sabemos la multiplicidad de la relación y el tipo, en este caso de agregación, ya que pedidos se agregan a un cliente determinado.
   - Pedido y Producto, un pedido puede contar con uno o varios productos, y un producto puede aparecer en uno o varios pedidos. En este caso el tipo de relación es de composición.
   - Pedido y Pago, un pedido puede tener varios pagos registrados, y un pago está asociado a un sólo pedido. En este caso, la relación es de tipo asociación.
 
+<hr>
 
 ## b) Explicación de la herramienta que has utilizado parra generar el diagrama UML, y si la has contrastado con otra y conclusiones de porque has elegido esa.
 
 He utilizado Lucidchart para generar el diagrama UML de mi sistema. Lucidchart es una herramienta en línea basada en la web que permite crear diagramas de todo tipo, incluyendo diagramas UML. Es ampliamente utilizada debido a su interfaz intuitiva, sus múltiples plantillas y su capacidad para colaborar en tiempo real.
 
-Lucidchart ofrece una amplia gama de formas predefinidas para diagramas UML, lo que facilita la creación de diagramas estructurados de clases, secuencias, actividades, etc. Además, permite personalizar los diagramas según las necesidades del proyecto, lo que lo hace muy flexible.
+Lucidchart ofrece una amplia gama de formas predefinidas para diagramas UML, lo que facilita la creación de diagramas estructurados de clases, secuencias, actividades, etc. Además, permite personalizar los diagramas según las necesidades del proyecto, lo que lo hace muy flexible. Características principales de Lucidchart que utilicé:
+- Plantillas y formas UML: Lucidchart proporciona plantillas específicas para diagramas UML, como clases, objetos, relaciones de herencia, asociaciones, etc. Esto hace que sea más fácil estructurar y crear un diagrama limpio y bien organizado.
+- Interfaz intuitiva: La herramienta es bastante fácil de usar, incluso para aquellos que no tienen mucha experiencia en diseño de diagramas. Se pueden arrastrar y soltar las formas, agregar texto y conectar las clases sin complicaciones.
+- Colaboración en tiempo real: Lucidchart permite compartir y colaborar en el diagrama con otros miembros del equipo o personas, lo que es útil en proyectos en grupo o cuando se requieren comentarios de otras personas.
+- Exportación: Una vez terminado el diagrama, es posible exportarlo en varios formatos (como PNG, JPEG, PDF o incluso en formato de archivo de Lucidchart) para incluirlo en informes o presentaciones.
 
-Características principales de Lucidchart que utilicé:
-Plantillas y formas UML: Lucidchart proporciona plantillas específicas para diagramas UML, como clases, objetos, relaciones de herencia, asociaciones, etc. Esto hace que sea más fácil estructurar y crear un diagrama limpio y bien organizado.
-Interfaz intuitiva: La herramienta es bastante fácil de usar, incluso para aquellos que no tienen mucha experiencia en diseño de diagramas. Se pueden arrastrar y soltar las formas, agregar texto y conectar las clases sin complicaciones.
-Colaboración en tiempo real: Lucidchart permite compartir y colaborar en el diagrama con otros miembros del equipo o personas, lo que es útil en proyectos en grupo o cuando se requieren comentarios de otras personas.
-Exportación: Una vez terminado el diagrama, es posible exportarlo en varios formatos (como PNG, JPEG, PDF o incluso en formato de archivo de Lucidchart) para incluirlo en informes o presentaciones.
+Elegí Lucidchart por su interfaz intuitiva, plantillas UML predefinidas, y capacidades de colaboración en tiempo real, lo que hizo que el proceso de diseño fuera más sencillo y eficiente. Exsiten herramientas como draw.io y StarUML que son muy útiles; no obstante, la facilidad de uso que Lucidchart ofrece para la creación y exportación de diagramas me hicieron elegirla para este trabajo.
 
-Elegí Lucidchart por su interfaz intuitiva, plantillas UML predefinidas, y capacidades de colaboración en tiempo real, lo que hizo que el proceso de diseño fuera más sencillo y eficiente. Aunque herramientas como draw.io y StarUML son muy útiles y pueden ser utilizadas en ciertos contextos, la facilidad de uso y las funciones adicionales que Lucidchart ofrece para la creación y exportación de diagramas me hicieron elegirla para este trabajo.
+<hr>
 
 ## c) Una explicación sobre la conversión del diagrama UML al código.
+
+Para convertir el diagrama UML a código en Kotlin, he mantenido la estructura básica planteada en el diagrama, adaptándola a las características del lenguaje de programación. Las clases del diagrama UML se han transformado en clases de objetos en Kotlin, donde se almacenan los atributos que representan los datos clave del sistema, y las funciones necesarias para las operaciones del sistema, como las relacionadas con el proceso de compra, se han convertido en métodos dentro de cada clase. Las relaciones que se reflejan en el diagrama indican cómo se comunican las clases y cómo se pasan los atributos de una clase a otra cuando es necesario.
+
+En cuanto a la clase FormaPago, originalmente se pensé en utilizar herencia, pero se opté por un enum para simplificar la implementación. Cada tipo de pago (como CARD, CASH y CHEQUE) tiene su propia implementación de la función realizarVerificacion(), lo que es un claro ejemplo de polimorfismo, ya que la verificación se realiza de forma diferente según el tipo de pago. En resumen, la conversión del diagrama UML al código Kotlin se ha hecho manteniendo su estructura y alineándola con los principios de la programación orientada a objetos. Los métodos se implementaron siguiendo las funcionalidades definidas en el diagrama, y las relaciones entre clases se reflejan mediante el uso de listas y referencias. De este modo, el código en Kotlin mantiene la fidelidad al diseño UML, lo que facilita tanto la comprensión como el mantenimiento del sistema.
+
+Enlace al código --> 
+![código](https://github.com/Lmrocio/Practica_5.2_Entornos/blob/main/Main.kt)
